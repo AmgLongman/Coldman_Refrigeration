@@ -222,6 +222,7 @@ header {
     height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .service-card:hover {
@@ -234,6 +235,24 @@ header {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     color: var(--accent-blue);
+}
+
+/* --- Image Containers with Overflow Protection --- */
+.project-image-wrapper {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin: -3rem -2rem 2rem -2rem;
+    position: relative;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
 }
 
 /* --- Tables (For Technical Specs) --- */
@@ -260,6 +279,13 @@ header {
 }
 
 .tech-table tr:hover { background-color: #f9fcfb; }
+
+/* --- Contact Form Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
 
 /* --- Fat Footer --- */
 .fat-footer {
@@ -328,6 +354,7 @@ header {
 /* --- Responsive Media Queries --- */
 @media (max-width: 992px) {
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
     .section-padding { padding: 70px 1.5rem; }
     .hero { min-height: 65vh; }
     .hero h1 { font-size: 3rem !important; max-width: 100% !important; }
@@ -335,6 +362,7 @@ header {
     .service-card { padding: 2rem 1.5rem; }
     .service-card h3 { font-size: 1.4rem; }
     .tech-table th, .tech-table td { padding: 12px 14px; }
+    .project-image-wrapper { height: 220px; }
 }
 
 @media (max-width: 768px) {
@@ -404,6 +432,19 @@ header {
         overflow-wrap: break-word;
     }
 
+    /* Stack contact form sections vertically */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Project grid adjustments */
+    .grid-3 { gap: 1.5rem; }
+    .project-image-wrapper {
+        height: 200px;
+        margin: -2rem -1.5rem 1.5rem -1.5rem;
+    }
+
     .fat-footer .grid-4 { grid-template-columns: 1fr; gap: 1.5rem; }
     .fat-footer { padding: 60px 1rem 20px; }
     .footer-top { display: grid; grid-template-columns: 1fr; gap: 2rem; border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
@@ -424,4 +465,16 @@ header {
     .fat-footer { padding: 50px 0.9rem 20px; }
     .footer-top { gap: 1.25rem; }
     .footer-lists ul { padding-left: 0; }
+    
+    /* Mobile adjustments for project section */
+    .project-image-wrapper {
+        height: 180px;
+        margin: -1.3rem -1rem 1rem -1rem;
+    }
+    
+    /* Mobile contact form spacing */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
