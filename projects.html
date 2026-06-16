@@ -32,11 +32,11 @@
             border-color: var(--highlight);
         }
         .project-image-wrapper {
-            width: 100%;
+            width: calc(100% + 6rem);
             height: 250px;
             overflow: hidden;
             border-radius: var(--radius) var(--radius) 0 0;
-            margin: -3rem -2rem 2rem -2rem; /* Pulls image to the edges of the card */
+            margin: -3rem -3rem 2rem -3rem;
             position: relative;
         }
         .project-image-wrapper img {
@@ -60,6 +60,16 @@
             font-weight: bold;
             text-transform: uppercase;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+        @media (max-width: 992px) {
+            .project-image-wrapper { height: 220px; width: calc(100% + 4rem); margin: -2rem -2rem 1.5rem -2rem; }
+        }
+        @media (max-width: 768px) {
+            .project-image-wrapper { height: 200px; width: calc(100% + 3rem); margin: -2rem -1.5rem 1.5rem -1.5rem; }
+        }
+        @media (max-width: 576px) {
+            .project-image-wrapper { height: 180px; width: calc(100% + 2rem); margin: -1.3rem -1rem 1rem -1rem; }
         }
     </style>
 </head>
@@ -72,10 +82,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                CodeMan<span>Refrigeration</span>
-            </a>
+            <a href="index.html" class="logo">CodeMan<span>Refrigeration</span></a>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -86,15 +93,15 @@
         </div>
     </header>
 
-    <section class="hero" style="min-height: 55vh; background: linear-gradient(to right, rgba(11, 19, 43, 0.95), rgba(28, 37, 65, 0.8)), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; padding-top: 80px;">
+    <section class="hero" style="min-height: 55vh; background: linear-gradient(to right, rgba(11, 19, 43, 0.95), rgba(28, 37, 65, 0.8)), url('https://images.unsplash.com/photo-1504328345606-18bbc8[...]">
         <div class="container text-center animate-fade-in" style="color: var(--text-light);">
             <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem;">Engineering Portfolio</h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Visual documentation of our technical installations, system overhauls, and infrastructure engineering across Ghana.</p>
+            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Visual documentation of our technical installations, system overhauls, and infrastructure engineering solutions.</p>
         </div>
     </section>
 
     <section class="section-padding container">
-        
+
         <div class="portfolio-filter">
             <button class="filter-btn active" data-target="all-projects">All Projects</button>
             <button class="filter-btn" data-target="marine-card">Marine & Vessel</button>
@@ -104,17 +111,17 @@
         </div>
 
         <div id="all-projects" class="grid-3">
-            
+
             <article id="marine-card" class="service-card">
                 <div class="project-image-wrapper">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxvBYhWcW5aeBcwjgdIOw_IHg6XWOPSrUnmpogWtBPJjRf8vsNHJ4sb4D&s=10" alt="Fishing trawler and marine refrigeration" loading="lazy">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMxvBYhWcW5aeBcwjgdIOw_IHg6XWOPSrUnmpogWtBPJjRf8vsNHJ4sb4D&s=10" alt="Fishing trawler and marine refrigeration">
                     <span class="project-tag">Marine</span>
                 </div>
                 <h3 style="color: var(--bg-dark); font-size: 1.4rem;">Deep Sea Trawler Upgrade</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Tema Fishing Harbour</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Tema Fishing Harbor</p>
                 <div style="flex-grow: 1;">
-                    <p><strong>The Challenge:</strong> Highly corrosive salt air severely degraded the existing blast freezer coils, leading to slow freezing times (12+ hours) and compromised export quality.</p>
-                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Extracted the failing units and installed custom marine-grade condenser coils featuring epoxy anti-corrosion coating and upgraded expansion valves.</p>
+                    <p><strong>The Challenge:</strong> Highly corrosive salt air severely degraded the existing blast freezer coils, leading to slow freezing times (12+ hours) and compromised export-grade cooling.</p>
+                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Installed custom marine-grade condenser coils featuring epoxy anti-corrosion coating and upgraded compressor system.</p>
                 </div>
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid var(--success);">
                     <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Result: Blast freeze time reduced to 7 hours, securing premium export grading.</p>
@@ -123,14 +130,14 @@
 
             <article id="agricultural-card" class="service-card">
                 <div class="project-image-wrapper">
-                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/WA/VZ/SY/104055165/food-industry-cold-storage-room-500x500.jpeg" alt="Produce crates in storage facility" loading="lazy">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/WA/VZ/SY/104055165/food-industry-cold-storage-room-500x500.jpeg" alt="Produce crates in storage facility">
                     <span class="project-tag">Agricultural</span>
                 </div>
                 <h3 style="color: var(--bg-dark); font-size: 1.4rem;">50-Ton Storage Facility</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Accra Plains</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Accra Produce Market</p>
                 <div style="flex-grow: 1;">
-                    <p><strong>The Challenge:</strong> Client experienced a devastating 15% post-harvest loss due to inadequate temperature stabilization during peak ambient heat periods exceeding 35°C.</p>
-                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Engineered and commissioned a custom walk-in cold room utilizing 100mm PU panels and a dual-compressor Bitzer system to guarantee redundancy.</p>
+                    <p><strong>The Challenge:</strong> 15% post-harvest loss due to inadequate temperature control during peak heat periods exceeding 32°C ambient.</p>
+                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Engineered a custom cold room with 100mm PU panels and dual-compressor Bitzer system for optimal thermal stability.</p>
                 </div>
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid var(--success);">
                     <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Result: Stabilized core temp at 2°C, cutting product spoilage to &lt;1%.</p>
@@ -139,14 +146,14 @@
 
             <article id="industrial-card" class="service-card">
                 <div class="project-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Water Chiller System" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Water Chiller System">
                     <span class="project-tag">Industrial</span>
                 </div>
                 <h3 style="color: var(--bg-dark); font-size: 1.4rem;">Injection Molding Overhaul</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Heavy Industrial Area, Tema</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Heavy Industrial Zone</p>
                 <div style="flex-grow: 1;">
-                    <p><strong>The Challenge:</strong> An existing water-cooled chiller was failing repeatedly due to rapid scaling and poor condenser water quality, entirely halting the factory production line.</p>
-                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Replaced the failing units with a robust air-cooled industrial chiller system. Integrated advanced particle filtration on the process loop.</p>
+                    <p><strong>The Challenge:</strong> Failing water-cooled chiller with rapid scaling halted factory operations, costing production losses.</p>
+                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Replaced with air-cooled industrial chiller and integrated advanced particle filtration for sustained efficiency.</p>
                 </div>
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid var(--success);">
                     <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Result: Zero unplanned downtime recorded over 14 months of continuous operation.</p>
@@ -155,14 +162,14 @@
 
             <article id="medical-card" class="service-card">
                 <div class="project-image-wrapper">
-                    <img src="https://www.mymortuarycooler.com/cdn/shop/files/4-bay-vault-style-morgue-cooler-model-1070-4mbe-2105513.jpg?v=1754718547&width=1946" alt="Medical Stainless Steel Refrigeration" loading="lazy">
+                    <img src="https://www.mymortuarycooler.com/cdn/shop/files/4-bay-vault-style-morgue-cooler-model-1070-4mbe-2105513.jpg?v=1754718547&width=1946" alt="Medical Stainless Steel Refrigeration">
                     <span class="project-tag">Medical</span>
                 </div>
                 <h3 style="color: var(--bg-dark); font-size: 1.4rem;">Hospital Mortuary Upgrade</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Kumasi Metropolis</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Kumasi Metropolitan Hospital</p>
                 <div style="flex-grow: 1;">
-                    <p><strong>The Challenge:</strong> The medical facility required an absolute fail-safe cooling system for a new 12-body storage unit, demanding strict compliance with sanitation regulations.</p>
-                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Designed a complete 304 stainless steel modular unit featuring an automated redundant backup loop that engages instantly upon primary compressor failure.</p>
+                    <p><strong>The Challenge:</strong> Required fail-safe cooling for 12-body storage unit with strict Ministry of Health thermal compliance.</p>
+                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Designed 304 stainless steel modular unit with automated redundant backup cooling loop for absolute uptime assurance.</p>
                 </div>
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid var(--success);">
                     <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Result: Achieved 100% uptime compliance with Ministry of Health thermal guidelines.</p>
@@ -171,14 +178,14 @@
 
             <article class="service-card">
                 <div class="project-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1601599561096-f87c95fff1e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8U3VwZXJtYXJrZXQlMjBEaXNwbGF5JTIwUmV0cm9maXR8ZW58MHx8MHx8fDA%3D" alt="Modern supermarket refrigeration display case" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1601599561096-f87c95fff1e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8U3VwZXJtYXJrZXQlMjBEaXNw" alt="Supermarket refrigerated display case">
                     <span class="project-tag">Commercial</span>
                 </div>
                 <h3 style="color: var(--bg-dark); font-size: 1.4rem;">Supermarket Display Retrofit</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>East Legon, Accra</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>East Legon Retail Complex</p>
                 <div style="flex-grow: 1;">
-                    <p><strong>The Challenge:</strong> A major retail outlet was experiencing massive energy spikes and inconsistent cooling across their open-display dairy and meat refrigeration units.</p>
-                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Conducted a complete thermal audit. Replaced legacy R-22 compressors with variable speed, high-efficiency scroll compressors and upgraded the digital PID controllers.</p>
+                    <p><strong>The Challenge:</strong> Energy spikes and inconsistent cooling across open-display dairy and meat refrigeration sections causing product loss.</p>
+                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Thermal audit and replacement of legacy R-22 compressors with variable-speed, high-efficiency scroll compressors.</p>
                 </div>
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid var(--success);">
                     <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Result: Electrical load reduced by 22%, stabilizing display temperatures universally.</p>
@@ -187,14 +194,14 @@
 
             <article class="service-card">
                 <div class="project-image-wrapper">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIA0DK-el2C4zX5ao7schpmjaix7O94iOs5H71e6_autOXuwF62K7iRBo&s=10" alt="Pharmaceutical warehouse interior with HVAC" loading="lazy">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIA0DK-el2C4zX5ao7schpmjaix7O94iOs5H71e6_autOXuwF62K7iRBo&s=10" alt="Pharmaceutical warehouse interior with HVAC">
                     <span class="project-tag">Medical</span>
                 </div>
                 <h3 style="color: var(--bg-dark); font-size: 1.4rem;">Pharma Warehouse HVAC</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Spintex Road</p>
+                <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;"><i class="fa-solid fa-location-dot inline-icon"></i>Spintex Road Distribution Hub</p>
                 <div style="flex-grow: 1;">
-                    <p><strong>The Challenge:</strong> A pharmaceutical distribution center struggled to maintain the strict 15°C to 25°C ambient temperature required for dry medication storage across a 5,000 sq ft warehouse.</p>
-                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Engineered a ducted commercial HVAC system with multi-zone climate control sensors and heavy-duty air handlers to ensure uniform air distribution.</p>
+                    <p><strong>The Challenge:</strong> Struggled to maintain 15°C to 25°C ambient for dry medication storage with uneven thermal distribution across warehouse zones.</p>
+                    <p style="margin-top: 10px;"><strong>The Solution:</strong> Engineered ducted commercial HVAC with multi-zone climate control sensors and heavy-duty air handlers.</p>
                 </div>
                 <div style="background: var(--bg-light); padding: 15px; border-radius: 4px; margin-top: 20px; border-left: 4px solid var(--success);">
                     <p style="margin: 0; font-size: 0.9rem; font-weight: 600;">Result: Eliminated thermal hot spots, ensuring zero inventory loss from heat degradation.</p>
@@ -202,7 +209,7 @@
             </article>
 
         </div>
-        
+
         <div style="text-align: center; margin-top: 60px;">
             <h2 style="color: var(--bg-dark); margin-bottom: 20px;">Ready for a Similar Result?</h2>
             <p style="color: #666; max-width: 600px; margin: 0 auto 30px;">Stop losing revenue to inefficient cooling systems. Let our engineering team audit your current infrastructure.</p>
@@ -232,7 +239,7 @@
                 <a href="index.html" class="logo" style="margin-bottom: 20px;">CodeMan<span>Refrigeration</span></a>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">The technical backbone of the industrial cooling infrastructure. Engineered for longevity and precision.</p>
             </div>
-            
+
             <div class="footer-lists">
                 <h4>Engineering Services</h4>
                 <ul>
@@ -257,8 +264,8 @@
                 <h4>Dispatch Center</h4>
                 <ul>
                     <li style="color: var(--text-muted);"><i class="fa-solid fa-location-dot inline-icon"></i>Heavy Industrial Area, Tema</li>
-                    <li style="color: var(--text-muted);"><i class="fa-solid fa-phone inline-icon"></i>+233 (0) XX XXX XXXX</li>
-                    <li style="color: var(--text-muted);"><i class="fa-solid fa-envelope inline-icon"></i>engineering@codemanref.com</li>
+                    <li style="color: var(--text-muted);"><i class="fa-solid fa-phone inline-icon"></i>+233 (0) 549 863 300</li>
+                    <li style="color: var(--text-muted);"><i class="fa-solid fa-envelope inline-icon"></i><a href="mailto:Mr.Coldmanrefrigeration@gmail.com" style="color: var(--text-muted); text-decoration: none;">Mr.Coldmanrefrigeration@gmail.com</a></li>
                     <li><a href="contact.html" style="color: var(--highlight); font-weight: bold; display: inline-block; margin-top: 10px;">Request Emergency Support &rarr;</a></li>
                 </ul>
             </div>
