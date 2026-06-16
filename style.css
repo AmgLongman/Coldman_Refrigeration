@@ -239,11 +239,11 @@ header {
 
 /* --- Image Containers with Overflow Protection --- */
 .project-image-wrapper {
-    width: 100%;
+    width: calc(100% + 6rem);
     height: 250px;
     overflow: hidden;
     border-radius: var(--radius) var(--radius) 0 0;
-    margin: -3rem -2rem 2rem -2rem;
+    margin: -3rem -3rem 2rem -3rem;
     position: relative;
 }
 
@@ -253,6 +253,21 @@ header {
     object-fit: cover;
     transition: transform 0.5s ease;
     display: block;
+}
+
+.project-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--bg-dark);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
 /* --- Tables (For Technical Specs) --- */
@@ -362,7 +377,7 @@ header {
     .service-card { padding: 2rem 1.5rem; }
     .service-card h3 { font-size: 1.4rem; }
     .tech-table th, .tech-table td { padding: 12px 14px; }
-    .project-image-wrapper { height: 220px; }
+    .project-image-wrapper { height: 220px; width: calc(100% + 4rem); margin: -2rem -2rem 1.5rem -2rem; }
 }
 
 @media (max-width: 768px) {
@@ -442,6 +457,7 @@ header {
     .grid-3 { gap: 1.5rem; }
     .project-image-wrapper {
         height: 200px;
+        width: calc(100% + 3rem);
         margin: -2rem -1.5rem 1.5rem -1.5rem;
     }
 
@@ -469,6 +485,7 @@ header {
     /* Mobile adjustments for project section */
     .project-image-wrapper {
         height: 180px;
+        width: calc(100% + 2rem);
         margin: -1.3rem -1rem 1rem -1rem;
     }
     
